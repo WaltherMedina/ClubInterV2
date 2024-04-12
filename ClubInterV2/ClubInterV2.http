@@ -1,0 +1,6 @@
+@ClubInterV2_HostAddress = http://localhost:5022
+
+GET {{ClubInterV2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
