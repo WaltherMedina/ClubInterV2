@@ -20,7 +20,25 @@ builder.Services.AddDbContext<AppDbContext>(
     options => options.UseSqlServer(connectionString)
 );
 
-builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentityCore<User>(options =>
+{
+    // Password configuration
+    options.Password.RequiredLength = 6;
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+
+    // For email confirmation
+    options.SignIn.RequireConfirmedEmail = true;
+}).AddRoles<IdentityRole>() // be able to add roles
+.AddRoleManager<RoleManager<IdentityRole>>() // be able to make use og RolManager
+.AddEntityFrameworkStores<AppDbContext>() // Providing our context
+.AddSignInManager<SignInManager<User>>() // make use of Signin Manager
+.AddUserManager<UserManager<User>>() // make use of UserManager to create users
+.AddDefaultTokenProviders(); // to able to create tokens for email confirmation
+
+builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddAuthentication(opt =>
