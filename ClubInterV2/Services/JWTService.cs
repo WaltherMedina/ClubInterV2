@@ -14,16 +14,16 @@ namespace ClubInterV2.Services
         public JWTService(IConfiguration config) 
         {
             _config = config;
+
+            // jwtKey is used for both encripting and decripting the JWT token
             _jwtKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:Key"]));
         }
         public string CreateJWT(User user)
         {
             var userClaims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId),
-                new Claim(ClaimTypes.NameIdentifier, user.UserId),
-                new Claim(ClaimTypes.NameIdentifier, user.UserId),
-                new Claim(ClaimTypes.NameIdentifier, user.UserId)
+                new Claim(ClaimTypes.NameIdentifier, user.Usuario),
+                new Claim(ClaimTypes.Email, user.Correo)
             };
 
             var creadentials = new SigningCredentials(_jwtKey, SecurityAlgorithms.HmacSha512Signature);

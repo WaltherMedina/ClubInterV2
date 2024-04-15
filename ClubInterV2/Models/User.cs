@@ -6,7 +6,7 @@ namespace ClubInterV2.Models
     public class User: IdentityUser
     {
         [Required]
-        public int UserId { get; set; }
+        public int UsuarioId { get; set; }
         [Required]
         public string Usuario { get; set; } // Nombre de usuario
         [Required]
@@ -15,7 +15,7 @@ namespace ClubInterV2.Models
         public bool Estado { get; set; } // Activo/Inactivo
         [Required]
         public bool CambiarContrasena { get; set; }
-        public string Email { get; set; }
+        public string Correo { get; set; }
         public DateTime? InicioSesion { get; set; } // Fecha de último inicio de sesión
         public bool BloqueoTemporal { get; set; }
         public DateTime? Vencimiento { get; set; } // Fecha de vencimiento de la contrasena

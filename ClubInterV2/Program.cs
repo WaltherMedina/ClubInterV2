@@ -1,5 +1,6 @@
 using ClubInterV2.Data;
 using ClubInterV2.Models;
+using ClubInterV2.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,10 @@ builder.Services.AddDbContext<AppDbContext>(
     options => options.UseSqlServer(connectionString)
 );
 
+// to able to inject JWTService class inside our Controllers
+builder.Services.AddScoped<JWTService>();
+
+
 builder.Services.AddIdentityCore<User>(options =>
 {
     // Password configuration
@@ -37,6 +42,24 @@ builder.Services.AddIdentityCore<User>(options =>
 .AddSignInManager<SignInManager<User>>() // make use of Signin Manager
 .AddUserManager<UserManager<User>>() // make use of UserManager to create users
 .AddDefaultTokenProviders(); // to able to create tokens for email confirmation
+
+
+// be able to authentication users using JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            // validate the token based on the key we have provided inside appsettings.development.json JWT:Key
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+            ValidIssuer = builder.Configuration["JWT:Issuer"],
+            ValidateIssuer = true,
+            ValidateAudience = false
+        };
+    });
+
+/*
 
 builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
@@ -91,7 +114,7 @@ builder.Services.AddSwaggerGen(c =>
         new List<string>()
         }
     });
-});
+});*/
 
 var app = builder.Build();
 
