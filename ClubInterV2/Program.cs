@@ -52,9 +52,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         {
             // validate the token based on the key we have provided inside appsettings.development.json JWT:Key
             ValidateIssuerSigningKey = true,
+            // the issuer signin key based on JWT:Key
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+            // the issuer which in here is the api project url we are using
             ValidIssuer = builder.Configuration["JWT:Issuer"],
+            // validatethe issuer (whow ever is issuing the JWT)
             ValidateIssuer = true,
+            // don't validate audience (andular side)
             ValidateAudience = false
         };
     });
@@ -127,6 +131,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// adding UseAuthentication into our pipeline and this shuld come before UseAuthorization
+// Authentication verifies the identity of a user or service, and authorization determines their acess rights
 app.UseAuthentication();
 
 app.UseAuthorization();
