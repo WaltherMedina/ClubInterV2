@@ -4,8 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClubInterV2.Data
 {
-    public class AppDbContext:IdentityDbContext<User>
+    public class AppDbContext:DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options) { }
+        public DbSet<Usuario> TUsuario { get; set; }
+        public DbSet<UsuarioLog> TUsuarioLog { get; set; }
+        public DbSet<Rol> TRol { get; set; }
+
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // configurar las relaciones entre las entidades (tablas) si es necesario
+        }
     }
 }
