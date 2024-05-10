@@ -1,6 +1,7 @@
 ﻿using ClubInterV2.Data;
 using Microsoft.AspNetCore.Mvc;
 using ClubInterV2.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClubInterV2.Controllers
 {
@@ -29,6 +30,13 @@ namespace ClubInterV2.Controllers
 
             // Si las credenciales son válidas, devolver el Id del usuario
             return Ok(usuario.UserId);
+        }
+
+        // GET: api/Usuario
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+        {
+            return await _context.TUsuario.ToListAsync();
         }
     }
 }

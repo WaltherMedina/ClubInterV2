@@ -1,7 +1,12 @@
-﻿namespace ClubInterV2.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ClubInterV2.Models
 {
+    [Table("TUsuario")]
     public class Usuario
     {
+        [Key]
         public int UserId { get; set; }
         public string UserUsuario { get; set; }
         public string UserContrasena { get; set; }
@@ -18,8 +23,11 @@
         public DateTime UserVencimiento { get; set; }
         public byte RoleId { get; set; }
         public DateTime CreatedDate { get; set; }
-        public int CreatedBy { get; set; }
+        public byte CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
-        public int UpdatedBy { get; set; }
+        public byte UpdatedBy { get; set; }
+
+        // Propiedad de navegación para la relación con Rol
+        public Rol Rol { get; set; }
     }
 }
