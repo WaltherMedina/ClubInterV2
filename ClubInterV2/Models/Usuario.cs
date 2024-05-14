@@ -29,5 +29,6 @@ namespace ClubInterV2.Models
 
         // Propiedad de navegación para la relación con Rol
         public Rol Rol { get; set; }
+        public UsuarioLog UserLog { get; set; }
     }
 }
