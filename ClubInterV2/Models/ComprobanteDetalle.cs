@@ -3,14 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClubInterV2.Models
 {
-    [Table("TComprobantePagoDetalle")]
     public class ComprobanteDetalle
     {
-        [Key]
         public int ComprobanteDetalleId { get; set; }
         public int ComprobanteCabeceraId { get; set; }
         public int ComprobanteDetalleItem { get; set; }
-        public int ComprobanteDeudaId { get; set; }
         public int ComprobanteDetalleCantidad { get; set; }
         public string ComprobanteDetalleCuenta { get; set; }
         public string ComprobanteDetalleCentroCosto { get; set; }
@@ -24,5 +21,7 @@ namespace ClubInterV2.Models
         public byte CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public byte UpdatedBy { get; set; }
+        public int ComprobanteDeudaId { get; set; }
+        public ComprobanteDeuda comprobanteDeuda { get; set; }
     }
 }

@@ -3,10 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClubInterV2.Models
 {
-    [Table ("TComprobantePagoCabecera")]
     public class ComprobanteCabecera
     {
-        [Key]
         public int ComprobanteCabeceraId { get; set; }
         public byte TipoComprobanteId { get; set; }
         public string ComprobanteCabeceraSerie { get; set; }
