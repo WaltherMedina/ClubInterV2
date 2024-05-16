@@ -25,5 +25,6 @@ namespace ClubInterV2.Models
         public int UpdatedBy { get; set; }
         public Usuario Usuario { get; set; }
         public ICollection<ComprobanteDeuda> ComprobantesDeuda { get; set; }
+        public ICollection<ComprobanteCabecera> ComprobantesCabecera { get; set; }
     }
 }

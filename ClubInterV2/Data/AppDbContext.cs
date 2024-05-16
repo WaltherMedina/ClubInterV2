@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace ClubInterV2.Data.prev
+namespace ClubInterV2.Data
 {
     public class AppDbContext : DbContext
     {

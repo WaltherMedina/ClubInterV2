@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ClubInterV2.Data;
 using ClubInterV2.Models;
 
+
 namespace ClubInterV2.Controllers
 {
     [ApiController]

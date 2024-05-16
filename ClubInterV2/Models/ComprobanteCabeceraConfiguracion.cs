@@ -7,7 +7,12 @@ namespace ClubInterV2.Models
     {
         public void Configure(EntityTypeBuilder<ComprobanteCabecera> builder)
         {
+            builder.ToTable("TComprobantePagoCabecera");
+            builder.HasKey(cca => cca.ComprobanteCabeceraId);
 
+            builder.HasMany(cca => cca.ComprobantesDetalle)
+                .WithOne(cdt => cdt.ComprCabecera)
+                .HasForeignKey(cdt => cdt.ComprobanteCabeceraId);
         }
     }
 }

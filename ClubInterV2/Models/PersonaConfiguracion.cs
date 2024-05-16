@@ -14,6 +14,10 @@ namespace ClubInterV2.Models
             builder.HasMany(p => p.ComprobantesDeuda)
                 .WithOne(cdd => cdd.Perso)
                 .HasForeignKey(cdd => cdd.PersonaId);
+
+            builder.HasMany(p => p.ComprobantesCabecera)
+                .WithOne(cca => cca.Perso)
+                .HasForeignKey(cca => cca.PersonaId);
         }
     }
 }
