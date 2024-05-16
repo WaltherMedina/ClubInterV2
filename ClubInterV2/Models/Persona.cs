@@ -17,12 +17,13 @@ namespace ClubInterV2.Models
         public bool PersonaEstado { get; set; }
         public byte EstadoCivilId { get; set; }
         public string PersonaFoto { get; set; }
-        public bool PersonaActualizadoReniec {  get; set; }
+        public bool PersonaActualizadoReniec { get; set; }
         public DateTime PersonaFechaActualizacionReniec { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public int UpdatedBy { get; set; }
+        public Usuario Usuario { get; set; }
         public ICollection<ComprobanteDeuda> ComprobantesDeuda { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace ClubInterV2.Models
     public class ComprobanteDeuda
     {
         public int ComprobanteDeudaId { get; set; }
-        
+
         public string ComprobanteDeudaSerie { get; set; }
         public int ComprobanteDeudaNumero { get; set; }
         public bool ComprobanteDeudaDebe { get; set; }
@@ -31,6 +31,6 @@ namespace ClubInterV2.Models
         public int ServicioId { get; set; }
         public Servicio Servi { get; set; }
         public ComprobanteDetalle comprobanteDetalle { get; set; }
-        
+
     }
 }

@@ -9,7 +9,11 @@ namespace ClubInterV2.Models
         {
             builder.ToTable("TServicio");
             builder.HasKey(s => s.ServicioId);
-            
+
+            builder.HasMany(s => s.ComprobantesDeuda)
+                .WithOne(cdd => cdd.Servi)
+                .HasForeignKey(cdd => cdd.ServicioId);
+
         }
     }
 }

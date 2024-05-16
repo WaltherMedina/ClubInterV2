@@ -8,7 +8,7 @@ namespace ClubInterV2.Models
         public int ComprobanteCabeceraId { get; set; }
         public byte TipoComprobanteId { get; set; }
         public string ComprobanteCabeceraSerie { get; set; }
-        public int ComprobanteCabeceraNumero {  get; set; }
+        public int ComprobanteCabeceraNumero { get; set; }
         public byte ComprobanteCabeceraFormaPago { get; set; }
         public string ComprobanteCabeceraNumeroSocio { get; set; }
         public int PersonaId { get; set; }

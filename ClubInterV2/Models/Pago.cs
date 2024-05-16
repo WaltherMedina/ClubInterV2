@@ -18,9 +18,9 @@ namespace ClubInterV2.Models
         public byte MonedaId { get; set; }
         public string PagoCuenta { get; set; }
         public decimal ComprobanteCabeceraMontoTotal { get; set; }
-        public decimal PagoMontoRedondeo {  get; set; }
+        public decimal PagoMontoRedondeo { get; set; }
         public decimal PagoMontoRecibido { get; set; }
-        public decimal PagoMontoVuelto {  get; set; }
+        public decimal PagoMontoVuelto { get; set; }
         public decimal PagoMontoPagado { get; set; }
         public DateTime CreatedDate { get; set; }
         public byte CreatedBy { get; set; }

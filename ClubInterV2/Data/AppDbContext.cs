@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace ClubInterV2.Data
+namespace ClubInterV2.Data.prev
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Usuario> TUsuario { get; set; }
         public DbSet<UsuarioLog> TUsuarioLog { get; set; }

@@ -7,7 +7,7 @@ namespace ClubInterV2.Models
     {
         public void Configure(EntityTypeBuilder<ComprobanteCabecera> builder)
         {
-            
+
         }
     }
 }

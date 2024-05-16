@@ -24,8 +24,12 @@
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
         public byte TipoAfectacionId { get; set; }
-        public byte UndadMedidaId { get; set; }
+        public TipoAfectacion TipoAfectIGV { get; set; }
+        public byte UnidadMedidaId { get; set; }
+        public UnidadMedida UniMedida { get; set; }
         public byte ServicioTipoId { get; set; }
+        public ServicioTipo ServiTipo { get; set; }
+        public ICollection<ComprobanteDeuda> ComprobantesDeuda { get; set; }
 
     }
 }

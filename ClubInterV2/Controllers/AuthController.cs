@@ -1,7 +1,7 @@
-﻿using ClubInterV2.Data;
-using Microsoft.AspNetCore.Mvc;
-using ClubInterV2.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ClubInterV2.Data;
+using ClubInterV2.Models;
 
 namespace ClubInterV2.Controllers
 {
