@@ -7,8 +7,6 @@ namespace ClubInterV2.Models
     public class Pago
     {
         public int PagoId { get; set; }
-        public int ComprobanteCabeceraId { get; set; }
-        public byte MetodoPagoId { get; set; }
         public byte CajaId { get; set; }
         public string PagoCuenta { get; set; }
         public decimal ComprobanteCabeceraMontoTotal { get; set; }
@@ -20,6 +18,9 @@ namespace ClubInterV2.Models
         public byte CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public byte UpdatedBy { get; set; }
+        public int ComprobanteCabeceraId { get; set; }
+        public byte MetodoPagoId { get; set; }
+        public 
         public byte TipoMonedaId { get; set; }
         public TipoMoneda TMoneda { get; set; }
     }
