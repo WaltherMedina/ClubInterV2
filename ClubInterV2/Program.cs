@@ -1,21 +1,20 @@
-using ClubInterV2.Data;
-using ClubInterV2.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using ClubInterV2.IOC;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-// Value to connection string
+/*// Value to connection string
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 // Register service to connection
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseSqlServer(connectionString)
-);
+);*/
 
 
 builder.Services.AddAuthorization();
@@ -24,6 +23,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.InyectarDependencias(builder.Configuration);
 
 var app = builder.Build();
 
