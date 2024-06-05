@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClubInterV2.BLL\ClubInterV2.BLL.csproj" />
+    <ProjectReference Include="..\ClubInterV2.DAL\ClubInterV2.DAL.csproj" />
+    <ProjectReference Include="..\ClubInterV2.Utility\ClubInterV2.Utility.csproj" />
+  </ItemGroup>
+
+</Project>
