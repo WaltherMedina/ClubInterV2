@@ -26,6 +26,15 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.InyectarDependencias(builder.Configuration);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("NuevaPolitica", app => {
+        app.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -42,6 +51,8 @@ app.UseHttpsRedirection();
 
 // Adding UseAuthentication into our pipeline and this should come before UseAuthorization
 app.UseAuthentication();
+
+app.UseCors("NuevaPolitica");
 
 app.UseAuthorization();
 
