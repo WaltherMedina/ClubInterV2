@@ -59,7 +59,7 @@ public partial class Tservicio
 
     public virtual TservicioTipo Svst { get; set; } = null!;
 
-    public virtual ICollection<TcomprobanteDeudum> TcomprobanteDeuda { get; set; } = new List<TcomprobanteDeudum>();
+    public virtual ICollection<TcomprobanteDeuda> TcomprobanteDeuda { get; set; } = new List<TcomprobanteDeuda>();
 
     public virtual ICollection<ThistoricoServicio> ThistoricoServicios { get; set; } = new List<ThistoricoServicio>();
 

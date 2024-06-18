@@ -13,7 +13,7 @@ public partial class Tentidad
 
     public string Entiidentidad { get; set; } = null!;
 
-    public virtual ICollection<TcomprobanteDeudum> TcomprobanteDeuda { get; set; } = new List<TcomprobanteDeudum>();
+    public virtual ICollection<TcomprobanteDeuda> TcomprobanteDeuda { get; set; } = new List<TcomprobanteDeuda>();
 
     public virtual ICollection<TcomprobantePagoCabecera> TcomprobantePagoCabeceras { get; set; } = new List<TcomprobantePagoCabecera>();
 

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ClubInterV2.Model\ClubInterV2.Model.csproj" />
   </ItemGroup>
 

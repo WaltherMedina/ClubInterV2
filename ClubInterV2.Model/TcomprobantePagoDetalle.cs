@@ -39,7 +39,7 @@ public partial class TcomprobantePagoDetalle
 
     public DateTime UpdatedDate { get; set; }
 
-    public virtual TcomprobanteDeudum Code { get; set; } = null!;
+    public virtual TcomprobanteDeuda Code { get; set; } = null!;
 
     public virtual TcomprobantePagoCabecera Copa { get; set; } = null!;
 
