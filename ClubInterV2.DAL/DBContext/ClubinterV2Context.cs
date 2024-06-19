@@ -36,7 +36,7 @@ public partial class ClubinterV2Context : DbContext
 
     public virtual DbSet<TcarnetTipo> TcarnetTipos { get; set; }
 
-    public virtual DbSet<TcomprobanteDeudum> TcomprobanteDeuda { get; set; }
+    public virtual DbSet<TcomprobanteDeuda> TcomprobanteDeuda { get; set; }
 
     public virtual DbSet<TcomprobantePagoCabecera> TcomprobantePagoCabeceras { get; set; }
 
@@ -446,7 +446,7 @@ public partial class ClubinterV2Context : DbContext
                 .HasColumnName("TICAEstado");
         });
 
-        modelBuilder.Entity<TcomprobanteDeudum>(entity =>
+        modelBuilder.Entity<TcomprobanteDeuda>(entity =>
         {
             entity.HasKey(e => e.Codeid);
 

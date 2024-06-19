@@ -11,7 +11,7 @@ public partial class TsunattipoComprobante
 
     public bool Ticovisible { get; set; }
 
-    public virtual ICollection<TcomprobanteDeudum> TcomprobanteDeuda { get; set; } = new List<TcomprobanteDeudum>();
+    public virtual ICollection<TcomprobanteDeuda> TcomprobanteDeuda { get; set; } = new List<TcomprobanteDeuda>();
 
     public virtual ICollection<TcomprobantePagoCabecera> TcomprobantePagoCabeceras { get; set; } = new List<TcomprobantePagoCabecera>();
 

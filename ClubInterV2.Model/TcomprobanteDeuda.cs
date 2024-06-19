@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ClubInterV2.Model;
 
-public partial class TcomprobanteDeudum
+public partial class TcomprobanteDeuda
 {
     public long Codeid { get; set; }
 
